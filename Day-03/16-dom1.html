@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello DOM</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui esse
+      adipisci iste vero earum iusto voluptatum tenetur. Molestias velit beatae
+      maxime minus sint voluptates possimus itaque omnis adipisci ipsum?
+    </p>
+    <ul class="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+
+    <script>
+      const headingEl = document.querySelector("h1");
+      console.log(headingEl.innerText);
+      headingEl.innerText = "<u>Hello Javascript</u>";
+      headingEl.innerHTML = "<u>Hello Javascript</u>";
+
+      const homeEl = document.querySelector(".menu li");
+      homeEl.innerHTML = "Ana Sayfa";
+    </script>
+  </body>
+</html>
