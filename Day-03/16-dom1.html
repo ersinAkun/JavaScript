@@ -7,26 +7,35 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello DOM</h1>
+    <h1><em>Hello DOM</em></h1>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo qui esse
-      adipisci iste vero earum iusto voluptatum tenetur. Molestias velit beatae
-      maxime minus sint voluptates possimus itaque omnis adipisci ipsum?
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum optio
+      assumenda porro? Modi culpa harum eius alias at, libero earum, provident
+      iste doloremque accusantium a ab facere ipsam, reprehenderit
+      necessitatibus.
     </p>
     <ul class="menu">
       <li>Home</li>
       <li>About</li>
       <li>Contact</li>
     </ul>
-
     <script>
       const headingEl = document.querySelector("h1");
-      console.log(headingEl.innerText);
-      headingEl.innerText = "<u>Hello Javascript</u>";
-      headingEl.innerHTML = "<u>Hello Javascript</u>";
-
-      const homeEl = document.querySelector(".menu li");
+      console.log(headingEl.innerText); //getter
+      headingEl.innerText = "<u>Hello Javascript</u>"; //setter
+      headingEl.innerHTML = "<u><em>Hello Javascript</em></u>";
+      const homeEl = document.querySelector(".menu li:last-child");
+      console.log(homeEl);
       homeEl.innerHTML = "Ana Sayfa";
+      const listItems = document.querySelectorAll(".menu li");
+      console.log(listItems);
+      console.log(listItems.length);
+      listItems[0].innerHTML = "Contact";
+      console.log(typeof listItems[0]);
+      console.log(typeof listItems);
+      const dizi = ["ali", 23];
+      console.log(typeof dizi);
+      console.log(typeof dizi[0]);
     </script>
   </body>
 </html>
