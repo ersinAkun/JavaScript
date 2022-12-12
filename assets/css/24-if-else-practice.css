@@ -1,0 +1,22 @@
+:root{
+    --color-dark: rgb(21, 17, 17);
+    --color-light: rgb(215, 208, 208);
+    
+
+}
+.btn-mode{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+.dark{
+    background-color: var(--color-dark);
+    color: var(--color-light
+    );
+}
+.light{
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
