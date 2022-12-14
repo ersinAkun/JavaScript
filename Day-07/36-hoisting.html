@@ -31,8 +31,15 @@
       function test() {
         console.log(y);
         var y = 5;
+        console.log(y);
+        return y;
       }
+      const z = test();
+      console.log(z);
+      const m = test;
+      console.log(m);
       test();
+      m();
     </script>
   </body>
 </html>
