@@ -9,20 +9,27 @@
   <body>
     <input type="number" id="txtNumber" />
     <button onclick="calculate()">Calculate</button>
+
     <script>
       const numberEl = document.querySelector("#txtNumber");
 
       function calculate() {
-        let total = 0;
         let num = Number(numberEl.value);
-        num = Math.abs(num);
-
-        while (num > 0) {
-          const digit = num % 10;
-          total += digit;
-          num = Math.floor(num / 10);
+        if (num < 0) {
+          alert("Please enter greater than zero");
+          return;
         }
-        alert(total);
+
+        if (!num) num = 1;
+
+        let factoriyel = 1;
+
+        do {
+          factoriyel *= num;
+          num--;
+        } while (num > 1);
+
+        alert(factoriyel);
       }
     </script>
   </body>
