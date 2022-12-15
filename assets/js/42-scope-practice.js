@@ -4,6 +4,12 @@ const btnGuess = document.querySelector(".btn-guess");
 const btnStart = document.querySelector(".btn-start");
 const numEl = document.querySelector("#txtNumber");
 const labelEl = document.querySelector("#lblResult");
+
+const minRandomNumber = 1;
+const maxRAndomNumber = 100;
+const totalShot = 5;
+
+
 const start = () => {
     randomNumber = generateRandomNumber(1,100);
     btnGuess.style.display = "inline";
