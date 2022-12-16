@@ -1,24 +1,21 @@
 
 
-document.querySelector("#btnFind").addEventListener("click", ()=>{
-
-
-    const arr =[12,3,5,12,34,67,12,5,76,8];
-    const maxNumber = getMaxNumber(arr);
-    document.querySelector("#result").innerHTML = maxNumber;
+document.querySelector("#btnSetPrices").addEventListener("click", ()=>{
+    const arr =[45000,20000,4500,1000];
+    const prices = setPrices(arr, 50);
+    document.querySelector("#result").innerHTML = prices;
 });
-
-const getMaxNumber = (arr) => {
-
+const setPrices = (arr, rate) => {
     if(!arr || typeof(arr)!=="object" || arr.length<=0 ) return false;
-    let maxNum = arr[0];
-
+  
+    rate = (!rate || isNaN(rate)) ? 0 : rate;
+    /* 
+    if(!rate || isNaN(rate)){
+        rate = 0;
+    } 
+    */
     for(let i=0; i<arr.length; i++){
-        if(arr[i]>maxNum){
-            maxNum = arr[i];
-        }
+        arr[i] += arr[i]*rate/100;
     }
-    
-    return maxNum;
+    return arr;
 }
-getMaxNumber(null);
