@@ -10,6 +10,19 @@
     <script>
       const animals = ["fil", "kuş", "deve", "fare", "kuş", "kedi"];
 
+      // FOR OF
+      for (let animal of animals) {
+        console.log(animal);
+      }
+
+      for (let [i, animal] of animals.entries()) {
+        console.log(i, animal);
+      }
+
+      for (let c of "Hello World") {
+        console.log(c);
+      }
+
       // FOR IN
       for (let i in animals) {
         console.log(i, animals[i]);
