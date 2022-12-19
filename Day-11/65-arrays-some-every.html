@@ -8,14 +8,14 @@
   </head>
   <body>
     <script>
-      const prices = [-50, 500, 1500, -20, 0, 15];
+      const prices = [-50, 500, 1500, 20, 10, 15];
 
-      //tum elemanlar sarti sagliyorsa TRUE doner
+      // Tüm elemanlar şartı sağlıyorsa TRUE döner
       if (prices.every((n) => n > 0)) {
-        alert("Tum sayilar pozitif");
+        alert("Tüm sayilar pozitif");
       }
 
-      //en az bir tane sarti saglayan eleman varsa TRUE doner
+      // En az bir tane şartı sağlayan eleman varsa TRUE döner
       if (prices.some((n) => n > 0)) {
         alert("Bazi sayilar pozitif");
       }
