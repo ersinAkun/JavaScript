@@ -1,43 +1,18 @@
-import { students } from "../data/students.js";
-const tblStudentsTbody = document.querySelector("#tblStudents tbody");
-const loadData = () => {
-  let strHtml = "";
-  students.forEach((student, index) => {
-    strHtml += `<tr>
-        <th scope="row">${index+1}</th>
-        <td>${student.name}</td>
-        <td class="score">${student.point}</td>
-        <td><button class="btn-delete btn btn-danger">🗑️</button></td>
-      </tr>`;
-  });
-  tblStudentsTbody.innerHTML = strHtml;
-};
-loadData();
-/* EVENTS */
-document.getElementById("btnShowLowScores").addEventListener("click", ()=>{
-  const lastTDs = tblStudentsTbody.querySelectorAll("tr td.score");
-  console.log(lastTDs);
-  lastTDs.forEach( (td, index)=> {
-      if(td.innerText<50){
-          //td.style.backgroundColor = "red";
-          tblStudentsTbody.querySelector(`tr:nth-child(${index+1})`).style.backgroundColor = "red";
-      }
-  })
+
+document.querySelector("#frmLogin").addEventListener("submit", (e)=>{
+  e.preventDefault(); // submit butonunun formu submit etmesin iengelledik
+  const emailEl = document.getElementById("txtEmail");
+  const passwordEl = document.getElementById("txtPassword");
+  try {
+      if(!isEmail(emailEl.value)) throw "Please enter a valid email";
+      if(!passwordEl.value) throw "Please enter your password";
+      e.target.submit();
+      
+  } catch (error) {
+      alert(error);
+  }
 });
-document.querySelectorAll(".btn-delete").forEach( (button)=> {
-  button.addEventListener("click", (e)=>{
-    e.stopPropagation();// olayın parent lara aktarılmasını engeller.
-    const trEl = e.target.closest("tr");
-    const name = trEl.querySelector("td").innerText;
-    const result = confirm(`Are you sure to delete ${name}?`);
-    if(result){
-      trEl.remove();
-    }
-  })
-});
-tblStudentsTbody.querySelectorAll("tr").forEach( (tr)=> {
-  tr.addEventListener("click", (e)=>{
-    e.target.closest("tr").classList.toggle("table-info");
-  });
-});
-/* EVENTS */
+const isEmail = (email) => {
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return emailRegex.test(email);
+}
