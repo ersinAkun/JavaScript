@@ -5,6 +5,7 @@ nav.menu{
     left: 0;
     right:0;
     top: -50px;
+    transition: top .5s;
 }
 nav.menu ul{
     list-style-type: none;
@@ -30,6 +31,6 @@ main{
 }
 
 
-.opened{
+nav.menu.opened{
     top:0;
 }
