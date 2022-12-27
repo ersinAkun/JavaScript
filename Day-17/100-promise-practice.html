@@ -12,10 +12,25 @@
     <script>
       document.getElementById("btn").addEventListener("click", () => {
         console.log("Clicked");
-        const result = confirm("Are you sure to delete?");
-        console.log(result);
+
+        confirmAsync("Are you sure to update").then((resp) =>
+          console.log(resp)
+        );
+
+        //const result = confirm("Are you sure to delete?");
+        //console.log(result);
         console.log("Ended");
       });
+
+      const confirmAsync = (msg) => {
+        //promisin kendisi asenkron degildir. Assenkron yapilardan veri dondurmek icin kullanilir.
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const result = confirm(msg);
+            resolve(result);
+          }, 0);
+        });
+      };
     </script>
   </body>
 </html>
