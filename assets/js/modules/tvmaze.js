@@ -5,6 +5,7 @@ const searchShows = (query, cb) => {
         cb(data);
       });
   };
+  
   const getShowDetails = (id, cb) => {
     fetch(`https://api.tvmaze.com/shows/${id}`)
       .then((resp) => resp.json())
@@ -12,4 +13,5 @@ const searchShows = (query, cb) => {
         cb(data);
       });
   };
+  
   export { searchShows, getShowDetails };
