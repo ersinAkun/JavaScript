@@ -1,4 +1,4 @@
-import { getShowDetails, searchShows } from "./modules/tvmaze.js";
+import { searchShows } from "./modules/tvmaze.js";
 
 document.getElementById("txtSearch").addEventListener("input", (e) => {
   const query = e.target.value;
@@ -12,10 +12,10 @@ document.getElementById("txtSearch").addEventListener("input", (e) => {
 });
 
 const createShows = (query) => {
-  document.getElementById("loading").classList.remove("d-none");
+
+  document.getElementById("loading").classList.remove("d-none");  
 
   searchShows(query, (shows) => {
-    console.log(shows);
     let strShows = "";
     shows.forEach((item) => {
       strShows += createShowHTML(item);
@@ -23,30 +23,20 @@ const createShows = (query) => {
 
     document.getElementById("tvShows").innerHTML = strShows;
     document.getElementById("loading").classList.add("d-none");
-
-    //iç içe callback örneği
-
-    /* 
-    getShowDetail(shows[0].show.id, (show) => {
-      console.log(show);
-    }); 
-    */
   });
 };
 
 const createShowHTML = (item) => {
   const { image, name, genres } = item.show;
-  return `  
-  <div class="col">
-    <div class="card h-100">
-      <img src="${image.medium}" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">${name}</h5>
-        <p class="card-text">
-          ${genres.join("-")}
-        </p>
-      </div>
+  return `
+    <div class="col">
+        <div class="card h-100">
+            <img src="${image.medium}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">${name}</h5>
+            <p class="card-text">${genres.join("-")}</p>
+            </div>
+        </div>
     </div>
-  </div>
-  `;
+    `;
 };
