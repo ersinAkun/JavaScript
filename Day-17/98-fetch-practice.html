@@ -12,17 +12,33 @@
       crossorigin="anonymous"
     />
   </head>
-
-  <body>
+  <body class="p-2">
     <div class="container">
-      <div>
+      <div class="text-center">
         <img
           src="https://static.tvmaze.com/images/tvm-header-logo.png"
           alt=""
         />
       </div>
+      <div class="mt-5">
+        <input type="search" id="txtSearch" class="form-control" />
+      </div>
+      <div id="tvShows" class="row mt-5">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="../assets/js/98-fetch-practice.js"></script>
+    <script type="module" src="../assets/js/98-fetch-practice.js"></script>
   </body>
 </html>
